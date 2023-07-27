@@ -1,2 +1,2 @@
-# pex
-parser/lexxer in lua 
+#pex
+lexer in lua 
