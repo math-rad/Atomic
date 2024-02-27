@@ -1,2 +1,4 @@
 # pex
-lexer in lua 
+A lexer written in roblox lua(luau)
+
+A tokenizer that accounts for positions within brackets 
