@@ -11,8 +11,10 @@ The most emphasized aspect of this program is that it **should absolutely have n
 ### 2. Typesets
 Every token eventually is assigned a set of types, and the way in which these types are derived reveal a hierarchical correspondence, wherein an individual typeset functions as a set and as one component to the identity of a token. An easy way to understand is that a token's type can be seen as the path to an object, where each index represents a typeset. For example:
 `operator.unary.plus`, `bracket.square`, `alphabetic.keyword`, `alphanumeric.identifier`
+
 There exists an implicit set which contains all possible top-level sets, we shall refer to this set as the `master` set. It is omitted from a tokens type since no other type can precede it, it only serves to keep the internal mechanisms of assigning a type coherent. The MP by default has common primitive typesets available, like
 `whitespace`, `alphabetic`, `numeric`, `alphanumeric`
+
 An important feature to note is that there are no provided typesets for brackets, strings, etc. This is intentional so  as to help the author writing their DSL—or more broadly, any language—realize the dynamic nature of this MP. They must reconstruct such *divisors* with the provided means to define more sophisticated tokens. At runtime, the generator will interpret the grammar and constraints(meta) provided to develop a mapping for individual characters' respective memberships to typesets. Typesets are declared with explicit and imperative criteria: explicit criteria refers to discrete tokens such as the literal `true`; imperative criteria utilizes negative and exclusive framing, for the resulting parser operates on a deductive approach to the differentiation of types, though I may implement ways to weigh specific structures more when ambiguous contexts prove to be difficult. To demonstrate how criteria is formed, one might declare the meta of their keywords and identifiers as such:
 `keyword<alphabetic>: [if then for while  of not] {};`
 `identifier<alphanumeric>: [^(alphabetic)(alphanumeric)*$] {-keyword}`
