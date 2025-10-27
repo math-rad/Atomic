@@ -1,0 +1,29 @@
+{
+    "src": [
+        {
+            "name": "word",
+            "parent": ["alphabetic"],
+            "exp": ["the that then"],
+            "imp": {}
+        },
+        {
+            "name": "notword",
+            "parent": ["alphabetic"],
+            "exp": [],
+            "imp": ["-word"]
+        },
+        {
+            "name": "space",
+            "parent": ["whitespace"],
+            "exp": [],
+            "imp": [],
+            "ommit": true
+        },
+        {
+            "name": "bracket",
+            "div": true,
+            "exp": ["(,)"],
+            "imp": []
+        }
+    ]
+}
