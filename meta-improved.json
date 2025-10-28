@@ -1,7 +1,7 @@
 {
   "modes": {
     "string-overide": {
-      "definitions": {
+      "typesets": {
         "content": {
           "composition": {
             "generic": "any"
@@ -10,7 +10,7 @@
       }
     }
   },
-  "definitions": {
+  "typesets": {
     "alphabetic": {
       "composition": {
         "symbols": {
