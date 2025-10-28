@@ -1,10 +1,17 @@
 {
     "src": [
         {
+            "name": "alphabetic",
+            "discreteComposition": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        },
+        {
+            "name": "whitespace",
+            "discreteComposition": "     \n"
+        },
+        {
             "name": "word",
             "superset": ["alphabetic"],
             "discrete": ["the then that there though this"],
-            "imp": {}
         },
         {
             "name": "notword",
