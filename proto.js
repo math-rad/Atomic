@@ -13,7 +13,7 @@ function generator(meta) {
     lookup[set.name] = set
 
     if (set.discrete) {
-      set.discrete.real = set.discrete.src.split(set.discrete.del)
+      set.discrete.exclusive = set.discrete.src.split(set.discrete.del)
       set.discrete.composition = makeLookup(self.discrete.real.split(''))
     }
     
