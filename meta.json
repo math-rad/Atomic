@@ -2,28 +2,26 @@
     "src": [
         {
             "name": "word",
-            "parent": ["alphabetic"],
-            "exp": ["the that then"],
+            "superset": ["alphabetic"],
+            "discrete": ["the then that there though this"],
             "imp": {}
         },
         {
             "name": "notword",
-            "parent": ["alphabetic"],
-            "exp": [],
+            "superset": ["alphabetic"],
             "imp": ["-word"]
         },
         {
             "name": "space",
-            "parent": ["whitespace"],
+            "superset": ["whitespace"],
             "exp": [],
             "imp": [],
-            "ommit": true
+            "omit": true
         },
         {
             "name": "bracket",
             "div": true,
-            "exp": ["(,)"],
-            "imp": []
+            "discrete": ["( )"],
         }
     ]
 }
