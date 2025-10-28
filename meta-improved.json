@@ -1,0 +1,91 @@
+{
+  "definitions": {
+    "alphabetic": {
+      "composition": {
+        "symbols": {
+          "delimiter": " ",
+          "source": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        }
+      }
+    },
+    "whitespace": {
+      "composition": {
+        "symbols": {
+          "delimiter": ";",
+          "source": "\n;\t;\r"
+        }
+      }
+    },
+    "word": {
+      "superset": ["alphabetic"],
+      "composition": {
+        "discrete": {
+          "delimiter": " ",
+          "source": "this that there then though"
+        }
+      }
+    },
+    "identifier": {
+      "superset": ["alphabetic"],
+      "composition": {
+        "relational": {
+          "NOT": ["alphabetic.word"]
+        }
+      }
+    },
+    "bracket": {},
+    "square": {
+      "superset": ["bracket"],
+      "divisor": {
+        "delimiters": ["[", "]"]
+      }
+    },
+    "parenthesis": {
+      "superset": ["bracket"],
+      "divisor": {
+        "delimiters": ["(", ")"]
+      }
+    },
+    "curly": {
+      "superset": ["bracket"],
+      "divisor": {
+        "delimiters": ["{", "}"]
+      }
+    },
+    "symbol": {},
+    "operator": {
+      "superset": ["symbol"]
+    },
+    "unary": {
+      "superset": ["operator"],
+      "composition": {
+        "discrete": {
+          "delimiter": " ",
+          "source": "+ - # !"
+        },
+        "relational": {
+          "+1": {
+            "not": ["alphabetic.word"],
+          },
+        }
+      }
+    },
+    "binary": {
+      "superset": ["operator"],
+      "composition": {
+        "discrete": {
+          "delimiter": " ",
+          "source": "+ - / * % ^"
+        },
+        "relational": {
+          "+1": {
+            "not": ["alphabetic.word"],
+          },
+          "-1": {
+            "not": ["alphabetic.word"]
+          }
+        }
+      }
+    }
+  }
+}
