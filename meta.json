@@ -2,7 +2,9 @@
     "src": [
         {
             "name": "alphabetic",
-            "discreteComposition": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "discrete": {
+                "composition": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            }
         },
         {
             "name": "whitespace",
@@ -11,7 +13,10 @@
         {
             "name": "word",
             "superset": ["alphabetic"],
-            "discrete": ["the then that there though this"],
+            "discrete": {
+                "del": " ",
+                "src" "this that there then though through"
+            }
         },
         {
             "name": "notword",
